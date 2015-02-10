@@ -1,22 +1,7 @@
 
 <tag-form>
 
-  <h3>Create a new Tag</h3>
-
-  <!--<ul>
-    <li each={ items.filter(filter) }>
-      <label class={ completed: done }>
-        <input type="checkbox" checked={ done } onclick={ parent.toggle }> { title } { price }
-      </label>
-    </li>
-  </ul>
-	<p>{ total }</p>
-  <form onsubmit={ add }>
-    <input name="input" onkeyup={ edit } maxlength="11">
-    <input name="price" maxlength="11">
-    <button disabled={ !text }>Add #{ items.length + 1 }</button>
-  </form>-->
-  
+  <h3>Create a new Tag</h3>  
   <form onsubmit={ save }>
   	<fieldset>
   		<label>Device name</label>
@@ -51,7 +36,7 @@
   <p class={ visible: show }>{ tag.brand }</p>
   <p class={ visible: show }>{ tag.storage } GB</p>
   <p class={ visible: show }>${ tag.price }</p>
-  <p class={ visible: show }>UPC-A { tag.upcimei }</p>
+  <p class={ visible: show }>UPC-A</p>
   <div id='container' style="margin:30px;">
   <svg id='upcCode'></svg>
   
@@ -75,7 +60,6 @@
 			return code + checksum.toString()
 		};
 	  save(e) {
-	  	<!--var inputPrice = parseInt(this.price.value)-->
 	  	this.tag.name = this.name.value
 	  	this.tag.brand = this.brand.value
 	  	this.tag.storage = this.storage.value
